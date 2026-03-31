@@ -40,14 +40,16 @@ export default function CursoPage({
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md shadow-primary/25 transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md shadow-primary/25 transition hover:-translate-y-px hover:bg-primary/90 hover:shadow-primary/35 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
             >
+              <ArrowLeftIcon />
               Voltar para o início
             </Link>
             <Link
               href="/#cursos"
-              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 transition hover:border-white/25 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 shadow-sm shadow-black/10 transition hover:-translate-y-px hover:border-white/25 hover:bg-white/10 hover:text-white active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
             >
+              <GridIcon />
               Ver cursos
             </Link>
           </div>
@@ -59,10 +61,18 @@ export default function CursoPage({
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:py-12">
       <div className="flex items-center justify-between gap-4">
-        <Link href="/" className="text-sm text-accent hover:underline">
-          Voltar
+        <Link
+          href="/#cursos"
+          className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/85 shadow-sm shadow-black/10 backdrop-blur transition hover:-translate-y-px hover:border-white/20 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+        >
+          <span className="text-white/70 transition group-hover:text-white">
+            <ArrowLeftIcon />
+          </span>
+          Voltar para cursos
+          <span className="ml-1 hidden rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-white/55 sm:inline">
+            /curso/{course.slug}
+          </span>
         </Link>
-        <span className="font-mono text-xs text-white/40">/{course.slug}</span>
       </div>
 
       <section className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur">
@@ -141,6 +151,65 @@ export default function CursoPage({
         </aside>
       </section>
     </div>
+  );
+}
+
+function ArrowLeftIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M15 18L9 12L15 6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function GridIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M4.5 4.5H10.5V10.5H4.5V4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.5 4.5H19.5V10.5H13.5V4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.5 13.5H10.5V19.5H4.5V13.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.5 13.5H19.5V19.5H13.5V13.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
