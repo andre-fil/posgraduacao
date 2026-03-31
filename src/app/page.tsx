@@ -1,65 +1,65 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CourseCard } from "@/components/CourseCard";
+import { courses } from "@/data/courses";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:py-16">
+        <section className="fade-in-up">
+          <div className="rounded-2xl border border-white/10 bg-glass/8 p-7 shadow-lg shadow-black/20 backdrop-blur sm:p-10">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
+                  FEMAF DIGITAL
+                </p>
+                <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Pós-graduação EAD FEMAF
+                </h1>
+                <p className="mt-4 text-sm leading-6 text-white/70 sm:text-base">
+                  Avance na sua carreira com especializações de alto nível
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="https://wa.me/558008785129"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md shadow-primary/25 transition hover:bg-primary/90 hover:shadow-primary/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                >
+                  Falar no WhatsApp
+                </a>
+                <Link
+                  href="#cursos"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 transition hover:border-white/25 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                >
+                  Ver cursos
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cursos" className="mt-10 sm:mt-12">
+          <div className="flex items-end justify-between gap-6">
+            <h2 className="text-sm font-semibold tracking-[0.25em] text-white/80">
+              CURSOS
+            </h2>
+            <span className="text-xs text-white/50">{courses.length} opções</span>
+          </div>
+
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((course, idx) => (
+              <div
+                key={course.slug}
+                className="fade-in-up"
+                style={{ animationDelay: `${Math.min(600, idx * 80)}ms` }}
+              >
+                <CourseCard course={course} />
+              </div>
+            ))}
+          </div>
+        </section>
     </div>
   );
 }
