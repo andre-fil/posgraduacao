@@ -76,13 +76,13 @@ export default function CursoPage({
       </div>
 
       <section className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur">
-        <div className="relative aspect-[1080/1350] w-full">
+        <div className="relative aspect-[21/9] w-full">
           <Image
             src={course.image}
             alt={course.title}
             fill
-            sizes="(max-width: 1152px) 100vw, 1152px"
-            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
