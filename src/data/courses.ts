@@ -1,10 +1,23 @@
+import type { StaticImageData } from "next/image";
+
+import imgAssistenciaSocialSaude from "@/app/img/assistencia social e saude.jpeg";
+import imgDocencia from "@/app/img/docencia_em.jpeg";
+import imgEducacaoInclusiva from "@/app/img/educacao_inclusiva.jpeg";
+import imgGestaoSupervisao from "@/app/img/gestao e supervisao escolar.jpeg";
+import imgInstrumentalidade from "@/app/img/instrumentalidade do serv.jpeg";
+import imgLibras from "@/app/img/libras.jpeg";
+import imgPsicologiaDev from "@/app/img/psicologia do dev. e da.jpeg";
+import imgPsicomotricidade from "@/app/img/psicomotricidade.jpeg";
+import imgPsicopedagogia from "@/app/img/psicopedagodia_clinst.jpeg";
+import imgTranstornos from "@/app/img/transtornos_apr.jpeg";
+
 export type Course = {
   slug: string;
   title: string;
   price: string;
   fullDescription: string;
   syllabus: string;
-  image: string;
+  image: string | StaticImageData;
   disciplines: {
     name: string;
     workload?: number;
@@ -15,12 +28,12 @@ export const courses: Course[] = [
   {
     slug: "educacao-inclusiva",
     title: "Educação Inclusiva",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Curso voltado à formação de profissionais para atuação na educação inclusiva, abordando políticas públicas, práticas pedagógicas e uso de tecnologias educacionais.",
     syllabus:
       "Fundamentos da educação inclusiva, políticas educacionais, práticas pedagógicas inclusivas, avaliação, tecnologia aplicada e direitos humanos.",
-    image: "/images/cursos/educacao-inclusiva.jpg",
+    image: imgEducacaoInclusiva,
     disciplines: [
       { name: "Política Nacional de Educação Especial", workload: 30 },
       { name: "Diretrizes para a Educação Inclusiva no Brasil", workload: 30 },
@@ -42,12 +55,12 @@ export const courses: Course[] = [
   {
     slug: "gestao-supervisao-escolar",
     title: "Gestão e Supervisão Escolar",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Formação voltada à gestão educacional, abordando liderança, organização escolar e processos administrativos.",
     syllabus:
       "Legislação educacional, gestão escolar, liderança, processos educacionais e inovação.",
-    image: "/images/cursos/gestao.jpg",
+    image: imgGestaoSupervisao,
     disciplines: [
       { name: "Legislação Educacional", workload: 30 },
       { name: "Organização e Gestão Escolar", workload: 30 },
@@ -67,12 +80,12 @@ export const courses: Course[] = [
   {
     slug: "libras",
     title: "LIBRAS",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Capacita profissionais para atuação com a Língua Brasileira de Sinais no contexto educacional.",
     syllabus:
       "Fundamentos da linguagem, educação de surdos, inclusão e prática em LIBRAS.",
-    image: "/images/cursos/libras.jpg",
+    image: imgLibras,
     disciplines: [
       {
         name: "Introdução aos Ambientes Virtuais de Aprendizagem",
@@ -95,12 +108,12 @@ export const courses: Course[] = [
   {
     slug: "psicologia-desenvolvimento-personalidade",
     title: "Psicologia do Desenvolvimento e da Personalidade",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Estuda os processos de desenvolvimento humano e formação da personalidade.",
     syllabus:
       "Teorias do desenvolvimento, aprendizagem, personalidade e psicologia educacional.",
-    image: "/images/cursos/psicologia.jpg",
+    image: imgPsicologiaDev,
     disciplines: [
       { name: "Histórico e conceito da psicologia do desenvolvimento", workload: 30 },
       { name: "Psicologia da Educação", workload: 30 },
@@ -122,11 +135,11 @@ export const courses: Course[] = [
   {
     slug: "transtornos-aprendizagem",
     title: "Transtornos de Aprendizagem",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Aborda identificação e intervenção em dificuldades e transtornos de aprendizagem.",
     syllabus: "Teorias da aprendizagem, diagnóstico, intervenção e inclusão.",
-    image: "/images/cursos/transtornos.jpg",
+    image: imgTranstornos,
     disciplines: [
       { name: "Desenvolvimento e Aprendizagem", workload: 30 },
       { name: "Distúrbios de Aprendizagem", workload: 30 },
@@ -152,11 +165,11 @@ export const courses: Course[] = [
   {
     slug: "docencia-ensino-fundamental-medio",
     title: "Docência do Ensino Fundamental e Médio",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Formação docente com foco em práticas pedagógicas e organização do ensino.",
     syllabus: "Didática, planejamento, avaliação e práticas educativas.",
-    image: "/images/cursos/docencia.jpg",
+    image: imgDocencia,
     disciplines: [
       { name: "Políticas públicas na educação", workload: 30 },
       { name: "Relação entre aprendizagem e desenvolvimento", workload: 40 },
@@ -177,11 +190,11 @@ export const courses: Course[] = [
   {
     slug: "psicomotricidade",
     title: "Psicomotricidade",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Curso voltado ao desenvolvimento psicomotor e suas aplicações educacionais.",
     syllabus: "Bases neurológicas, avaliação psicomotora e práticas pedagógicas.",
-    image: "/images/cursos/psicomotricidade.jpg",
+    image: imgPsicomotricidade,
     disciplines: [
       { name: "Metodologia da Pesquisa Científica", workload: 40 },
       { name: "Psicomotricidade: conceito e histórico", workload: 30 },
@@ -200,11 +213,11 @@ export const courses: Course[] = [
   {
     slug: "psicopedagogia",
     title: "Psicopedagogia Clínica e Institucional",
-    price: "R$ 160,00/mês",
+    price: "R$ 99,90/mês",
     fullDescription:
       "Forma profissionais para atuação psicopedagógica em contextos clínicos e institucionais.",
     syllabus: "Diagnóstico, intervenção e práticas psicopedagógicas.",
-    image: "/images/cursos/psicopedagogia.jpg",
+    image: imgPsicopedagogia,
     disciplines: [
       { name: "Metodologia da Pesquisa Científica", workload: 40 },
       { name: "Psicologia da Educação", workload: 20 },
@@ -227,11 +240,11 @@ export const courses: Course[] = [
   {
     slug: "assistencia-social-saude-publica",
     title: "Assistência Social e Saúde Pública",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Capacita profissionais para atuação na gestão e execução de políticas públicas em saúde e assistência social.",
     syllabus: "Gestão em saúde, políticas públicas e atuação interdisciplinar.",
-    image: "/images/cursos/assistencia.jpg",
+    image: imgAssistenciaSocialSaude,
     disciplines: [
       { name: "Didática do ensino superior" },
       { name: "Metodologia da Pesquisa Científica" },
@@ -249,11 +262,11 @@ export const courses: Course[] = [
   {
     slug: "instrumentalidade-servico-social",
     title: "Instrumentalidade do Serviço Social",
-    price: "R$ 160,00/mês",
+    price: "R$ 89,90/mês",
     fullDescription:
       "Formação voltada ao desenvolvimento de competências técnicas e práticas no serviço social.",
     syllabus: "Instrumentos de atuação, políticas públicas e intervenção social.",
-    image: "/images/cursos/servico-social.jpg",
+    image: imgInstrumentalidade,
     disciplines: [
       { name: "LIBRAS" },
       { name: "Didática do Ensino Superior" },

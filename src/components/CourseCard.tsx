@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
 export type CourseCardCourse = {
   slug: string;
   title: string;
   fullDescription: string;
-  image: string;
+  image: string | StaticImageData;
 };
 
 export function CourseCard({ course }: { course: CourseCardCourse }) {
