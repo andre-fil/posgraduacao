@@ -21,13 +21,13 @@ export function CourseCard({ course }: { course: CourseCardCourse }) {
       </div>
 
       <div className="relative">
-        <div className="relative aspect-[16/9] w-full overflow-hidden">
+        <div className="relative aspect-[1080/1350] w-full overflow-hidden">
           <Image
             src={course.image}
             alt={course.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition duration-300 group-hover:scale-[1.03]"
+            className="object-cover object-center transition duration-300 group-hover:scale-[1.03]"
             priority={false}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
