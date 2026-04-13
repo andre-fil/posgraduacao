@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0a0a0a]/90 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-center px-5">
         <Link href="/" className="flex items-center gap-3.5 sm:gap-4">
           <span className="relative h-11 w-11 overflow-hidden rounded-xl sm:h-14 sm:w-14">
