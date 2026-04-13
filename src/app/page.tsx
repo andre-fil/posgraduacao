@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CourseCard } from "@/components/CourseCard";
+import { CoursesSection } from "@/components/CoursesSection";
 import { courses } from "@/data/courses";
 
 export default function Home() {
@@ -51,26 +51,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cursos" className="mt-10 sm:mt-12">
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="text-sm font-semibold tracking-[0.25em] text-white/80">
-              CURSOS
-            </h2>
-            <span className="text-xs text-white/50">{courses.length} opções</span>
-          </div>
-
-          <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.map((course, idx) => (
-              <div
-                key={course.slug}
-                className="fade-in-up"
-                style={{ animationDelay: `${Math.min(600, idx * 80)}ms` }}
-              >
-                <CourseCard course={course} />
-              </div>
-            ))}
-          </div>
-        </section>
+        <CoursesSection courses={courses} />
     </div>
   );
 }

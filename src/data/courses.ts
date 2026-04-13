@@ -11,10 +11,22 @@ import imgPsicomotricidade from "@/app/img/psicomotricidade.jpeg";
 import imgPsicopedagogia from "@/app/img/psicopedagodia_clinst.jpeg";
 import imgTranstornos from "@/app/img/transtornos_apr.jpeg";
 
+export type CourseAreaId =
+  | "educacao-docencia"
+  | "psicologia-aprendizagem"
+  | "servico-social-saude";
+
+export const courseAreaOptions: { id: CourseAreaId; label: string }[] = [
+  { id: "educacao-docencia", label: "Educação e docência" },
+  { id: "psicologia-aprendizagem", label: "Psicologia e aprendizagem" },
+  { id: "servico-social-saude", label: "Serviço social e saúde" },
+];
+
 export type Course = {
   slug: string;
   title: string;
   price: string;
+  area: CourseAreaId;
   fullDescription: string;
   syllabus: string;
   image: string | StaticImageData;
@@ -29,6 +41,7 @@ export const courses: Course[] = [
     slug: "educacao-inclusiva",
     title: "Educação Inclusiva",
     price: "R$ 89,90/mês",
+    area: "educacao-docencia",
     fullDescription:
       "Curso voltado à formação de profissionais para atuação na educação inclusiva, abordando políticas públicas, práticas pedagógicas e uso de tecnologias educacionais.",
     syllabus:
@@ -56,6 +69,7 @@ export const courses: Course[] = [
     slug: "gestao-supervisao-escolar",
     title: "Gestão e Supervisão Escolar",
     price: "R$ 89,90/mês",
+    area: "educacao-docencia",
     fullDescription:
       "Formação voltada à gestão educacional, abordando liderança, organização escolar e processos administrativos.",
     syllabus:
@@ -81,6 +95,7 @@ export const courses: Course[] = [
     slug: "libras",
     title: "LIBRAS",
     price: "R$ 89,90/mês",
+    area: "educacao-docencia",
     fullDescription:
       "Capacita profissionais para atuação com a Língua Brasileira de Sinais no contexto educacional.",
     syllabus:
@@ -109,6 +124,7 @@ export const courses: Course[] = [
     slug: "psicologia-desenvolvimento-personalidade",
     title: "Psicologia do Desenvolvimento e da Personalidade",
     price: "R$ 89,90/mês",
+    area: "psicologia-aprendizagem",
     fullDescription:
       "Estuda os processos de desenvolvimento humano e formação da personalidade.",
     syllabus:
@@ -136,6 +152,7 @@ export const courses: Course[] = [
     slug: "transtornos-aprendizagem",
     title: "Transtornos de Aprendizagem",
     price: "R$ 89,90/mês",
+    area: "psicologia-aprendizagem",
     fullDescription:
       "Aborda identificação e intervenção em dificuldades e transtornos de aprendizagem.",
     syllabus: "Teorias da aprendizagem, diagnóstico, intervenção e inclusão.",
@@ -166,6 +183,7 @@ export const courses: Course[] = [
     slug: "docencia-ensino-fundamental-medio",
     title: "Docência do Ensino Fundamental e Médio",
     price: "R$ 89,90/mês",
+    area: "educacao-docencia",
     fullDescription:
       "Formação docente com foco em práticas pedagógicas e organização do ensino.",
     syllabus: "Didática, planejamento, avaliação e práticas educativas.",
@@ -191,6 +209,7 @@ export const courses: Course[] = [
     slug: "psicomotricidade",
     title: "Psicomotricidade",
     price: "R$ 89,90/mês",
+    area: "psicologia-aprendizagem",
     fullDescription:
       "Curso voltado ao desenvolvimento psicomotor e suas aplicações educacionais.",
     syllabus: "Bases neurológicas, avaliação psicomotora e práticas pedagógicas.",
@@ -214,6 +233,7 @@ export const courses: Course[] = [
     slug: "psicopedagogia",
     title: "Psicopedagogia Clínica e Institucional",
     price: "R$ 99,90/mês",
+    area: "psicologia-aprendizagem",
     fullDescription:
       "Forma profissionais para atuação psicopedagógica em contextos clínicos e institucionais.",
     syllabus: "Diagnóstico, intervenção e práticas psicopedagógicas.",
@@ -241,6 +261,7 @@ export const courses: Course[] = [
     slug: "assistencia-social-saude-publica",
     title: "Assistência Social e Saúde Pública",
     price: "R$ 89,90/mês",
+    area: "servico-social-saude",
     fullDescription:
       "Capacita profissionais para atuação na gestão e execução de políticas públicas em saúde e assistência social.",
     syllabus: "Gestão em saúde, políticas públicas e atuação interdisciplinar.",
@@ -263,6 +284,7 @@ export const courses: Course[] = [
     slug: "instrumentalidade-servico-social",
     title: "Instrumentalidade do Serviço Social",
     price: "R$ 89,90/mês",
+    area: "servico-social-saude",
     fullDescription:
       "Formação voltada ao desenvolvimento de competências técnicas e práticas no serviço social.",
     syllabus: "Instrumentos de atuação, políticas públicas e intervenção social.",
