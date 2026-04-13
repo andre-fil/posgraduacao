@@ -19,7 +19,7 @@ export default function Home() {
               />
               <div className="relative flex h-full min-h-[11rem] flex-col justify-end gap-6 p-7 sm:min-h-0 sm:flex-row sm:items-end sm:justify-between sm:p-10">
                 <div className="max-w-2xl">
-                  <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
+                  <p className="text-sm font-semibold tracking-[0.3em] text-white/75 sm:text-base sm:tracking-[0.32em]">
                     FEMAF DIGITAL
                   </p>
                   <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">

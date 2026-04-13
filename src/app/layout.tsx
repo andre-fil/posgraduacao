@@ -28,7 +28,7 @@ export default function RootLayout({
         <div className="relative min-h-screen">
           <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(1200px_circle_at_20%_0%,rgba(30,58,138,0.35),transparent_55%),radial-gradient(900px_circle_at_80%_15%,rgba(59,130,246,0.18),transparent_55%),linear-gradient(to_bottom,#050505,#0a0a0a)]" />
           <Header />
-          <main className="min-h-full pt-20">{children}</main>
+          <main className="min-h-full pt-24">{children}</main>
         </div>
       </body>
     </html>
