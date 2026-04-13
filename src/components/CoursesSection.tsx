@@ -23,6 +23,17 @@ export function CoursesSection({ courses }: { courses: Course[] }) {
     [courses, filter]
   );
 
+  const sectionsWhenAll = useMemo(() => {
+    if (filter !== "todas") return null;
+    return courseAreaOptions
+      .map((opt) => ({
+        id: opt.id,
+        label: opt.label,
+        courses: courses.filter((c) => c.area === opt.id),
+      }))
+      .filter((s) => s.courses.length > 0);
+  }, [courses, filter]);
+
   return (
     <section id="cursos" className="mt-8 sm:mt-12">
       <div className="flex items-start justify-between gap-3 sm:items-end">
@@ -85,6 +96,55 @@ export function CoursesSection({ courses }: { courses: Course[] }) {
         <p className="mt-6 rounded-xl border border-white/10 bg-white/5 px-4 py-6 text-center text-sm text-white/65 sm:mt-8">
           Nenhum curso nesta área no momento.
         </p>
+      ) : filter === "todas" && sectionsWhenAll ? (
+        <div className="mt-4 sm:mt-5">
+          {sectionsWhenAll.map((section, sectionIdx) => {
+            const cardIndexOffset = sectionsWhenAll
+              .slice(0, sectionIdx)
+              .reduce((n, s) => n + s.courses.length, 0);
+            return (
+              <section
+                key={section.id}
+                id={`cursos-${section.id}`}
+                aria-labelledby={`heading-${section.id}`}
+                className={
+                  sectionIdx === 0
+                    ? ""
+                    : "mt-10 border-t border-white/10 pt-10 sm:mt-12 sm:pt-12"
+                }
+              >
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+                  <h3
+                    id={`heading-${section.id}`}
+                    className="shrink-0 text-xs font-semibold tracking-[0.28em] text-white/75 sm:text-sm"
+                  >
+                    {section.label}
+                  </h3>
+                  <div
+                    className="h-px flex-1 bg-gradient-to-r from-white/20 via-white/10 to-transparent sm:mt-0"
+                    aria-hidden
+                  />
+                </div>
+                <div className="mt-4 grid grid-cols-1 gap-5 sm:mt-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+                  {section.courses.map((course, j) => {
+                    const idx = cardIndexOffset + j;
+                    return (
+                      <div
+                        key={course.slug}
+                        className="fade-in-up"
+                        style={{
+                          animationDelay: `${Math.min(600, idx * 80)}ms`,
+                        }}
+                      >
+                        <CourseCard course={course} />
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+        </div>
       ) : (
         <div className="mt-4 grid grid-cols-1 gap-5 sm:mt-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {filtered.map((course, idx) => (
