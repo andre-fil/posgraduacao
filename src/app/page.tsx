@@ -20,11 +20,11 @@ export default function Home() {
                 className="object-cover object-center"
               />
               <div
-                className="absolute inset-0 bg-[radial-gradient(800px_circle_at_20%_40%,rgba(59,130,246,0.16),transparent_52%),radial-gradient(600px_circle_at_85%_20%,rgba(30,58,138,0.22),transparent_47%),linear-gradient(115deg,rgba(15,23,42,0.5),rgba(15,23,42,0.3))]"
+                className="absolute inset-0 bg-[radial-gradient(980px_circle_at_20%_35%,rgba(0,200,248,0.5),transparent_56%),radial-gradient(760px_circle_at_84%_18%,rgba(0,200,248,0.34),transparent_50%),linear-gradient(120deg,rgba(0,200,248,0.28),rgba(14,116,144,0.08))]"
                 aria-hidden
               />
               <div
-                className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-slate-950/18 via-slate-900/4 to-cyan-200/10"
                 aria-hidden
               />
               <div className="relative flex h-full min-h-[11rem] flex-col justify-end gap-6 p-7 sm:min-h-0 sm:flex-row sm:items-end sm:justify-between sm:p-10">
@@ -42,13 +42,13 @@ export default function Home() {
                     href="https://wa.me/558008785129"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md shadow-primary/25 transition hover:bg-primary/90 hover:shadow-primary/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-cyan-600/30 transition hover:brightness-105 hover:shadow-cyan-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
                   >
                     Falar no WhatsApp
                   </a>
                   <Link
                     href="#cursos"
-                    className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 backdrop-blur-sm transition hover:border-white/25 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                    className="inline-flex items-center justify-center rounded-xl border border-cyan-200/30 bg-cyan-100/10 px-5 py-3 text-sm font-semibold text-white/95 backdrop-blur-sm transition hover:border-cyan-100/45 hover:bg-cyan-100/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
                   >
                     Ver cursos
                   </Link>

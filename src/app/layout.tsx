@@ -24,9 +24,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#0a0a0a] text-white">
+      <body className="min-h-full bg-[#05131a] text-white">
         <div className="relative min-h-screen">
-          <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(1200px_circle_at_20%_0%,rgba(30,58,138,0.35),transparent_55%),radial-gradient(900px_circle_at_80%_15%,rgba(59,130,246,0.18),transparent_55%),linear-gradient(to_bottom,#050505,#0a0a0a)]" />
+          <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(1200px_circle_at_20%_0%,rgba(0,200,248,0.34),transparent_56%),radial-gradient(900px_circle_at_80%_15%,rgba(6,182,212,0.22),transparent_55%),linear-gradient(to_bottom,#031018,#05131a)]" />
           <Header />
           <main className="min-h-full pt-24">{children}</main>
         </div>
