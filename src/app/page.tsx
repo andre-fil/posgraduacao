@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CoursesSection } from "@/components/CoursesSection";
 import { courses } from "@/data/courses";
+import imgCapaEad from "@/app/img/capa-ead-site.png";
 
 export default function Home() {
   return (
@@ -9,6 +11,14 @@ export default function Home() {
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur">
             {/* Proporção alvo: 1920×600 — no mobile um pouco mais alta para caber o conteúdo */}
             <div className="relative aspect-[4/3] w-full sm:aspect-[2/1] lg:aspect-[1920/600]">
+              <Image
+                src={imgCapaEad}
+                alt="Pós-graduação EAD FEMAF"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1152px"
+                className="object-cover object-center"
+              />
               <div
                 className="absolute inset-0 bg-[radial-gradient(800px_circle_at_20%_40%,rgba(59,130,246,0.25),transparent_50%),radial-gradient(600px_circle_at_85%_20%,rgba(30,58,138,0.35),transparent_45%),linear-gradient(115deg,rgba(15,23,42,0.92),rgba(15,23,42,0.75))]"
                 aria-hidden
