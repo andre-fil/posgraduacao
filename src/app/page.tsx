@@ -20,11 +20,11 @@ export default function Home() {
                 className="object-cover object-center"
               />
               <div
-                className="absolute inset-0 bg-[radial-gradient(800px_circle_at_20%_40%,rgba(59,130,246,0.25),transparent_50%),radial-gradient(600px_circle_at_85%_20%,rgba(30,58,138,0.35),transparent_45%),linear-gradient(115deg,rgba(15,23,42,0.92),rgba(15,23,42,0.75))]"
+                className="absolute inset-0 bg-[radial-gradient(800px_circle_at_20%_40%,rgba(59,130,246,0.16),transparent_52%),radial-gradient(600px_circle_at_85%_20%,rgba(30,58,138,0.22),transparent_47%),linear-gradient(115deg,rgba(15,23,42,0.5),rgba(15,23,42,0.3))]"
                 aria-hidden
               />
               <div
-                className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent"
                 aria-hidden
               />
               <div className="relative flex h-full min-h-[11rem] flex-col justify-end gap-6 p-7 sm:min-h-0 sm:flex-row sm:items-end sm:justify-between sm:p-10">
