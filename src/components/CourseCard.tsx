@@ -5,7 +5,7 @@ export type CourseCardCourse = {
   slug: string;
   title: string;
   fullDescription: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
 };
 
 export function CourseCard({ course }: { course: CourseCardCourse }) {
@@ -21,17 +21,26 @@ export function CourseCard({ course }: { course: CourseCardCourse }) {
       </div>
 
       <div className="relative">
-        <div className="relative aspect-[1080/1350] w-full overflow-hidden">
-          <Image
-            src={course.image}
-            alt={course.title}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover object-center transition duration-300 group-hover:scale-[1.03]"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-        </div>
+        {course.image ? (
+          <div className="relative aspect-[1080/1350] w-full overflow-hidden">
+            <Image
+              src={course.image}
+              alt={course.title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover object-center transition duration-300 group-hover:scale-[1.03]"
+              priority={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          </div>
+        ) : (
+          <div className="relative aspect-[21/9] w-full overflow-hidden bg-[radial-gradient(700px_circle_at_20%_20%,rgba(0,200,248,0.35),transparent_55%),linear-gradient(135deg,rgba(2,132,199,0.45),rgba(12,74,110,0.85))]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <p className="absolute inset-x-0 bottom-0 p-5 text-sm font-semibold tracking-tight text-white/95 sm:p-6 sm:text-base">
+              {course.title}
+            </p>
+          </div>
+        )}
 
         <div className="p-5 sm:p-6">
           <h3 className="text-base font-semibold tracking-tight text-white/95 sm:text-lg">

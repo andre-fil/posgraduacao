@@ -76,25 +76,39 @@ export default function CursoPage({
       </div>
 
       <section className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur">
-        <div className="relative aspect-[21/9] w-full">
-          <Image
-            src={course.image}
-            alt={course.title}
-            fill
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
-            <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
-              PÓS-GRADUAÇÃO EAD
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
-              {course.title}
-            </h1>
+        {course.image ? (
+          <div className="relative aspect-[21/9] w-full">
+            <Image
+              src={course.image}
+              alt={course.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+              <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
+                PÓS-GRADUAÇÃO EAD
+              </p>
+              <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                {course.title}
+              </h1>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="relative aspect-[21/9] w-full bg-[radial-gradient(900px_circle_at_20%_20%,rgba(0,200,248,0.35),transparent_55%),linear-gradient(135deg,rgba(2,132,199,0.45),rgba(12,74,110,0.9))]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+              <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
+                PÓS-GRADUAÇÃO EAD
+              </p>
+              <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                {course.title}
+              </h1>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">

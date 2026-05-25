@@ -10,13 +10,15 @@ import imgPsicologiaDev from "@/app/img/psicologia do dev. e da.jpeg";
 import imgPsicomotricidade from "@/app/img/psicomotricidade.jpeg";
 import imgPsicopedagogia from "@/app/img/psicopedagodia_clinst.jpeg";
 import imgTranstornos from "@/app/img/transtornos_apr.jpeg";
+import { newCourses } from "@/data/new-courses";
 
 export type CourseAreaId =
   | "educacao"
   | "servico-social"
   | "administracao"
   | "ciencias-contabeis"
-  | "saude";
+  | "saude"
+  | "tecnologia";
 
 export const courseAreaOptions: { id: CourseAreaId; label: string }[] = [
   { id: "educacao", label: "Educação" },
@@ -24,6 +26,7 @@ export const courseAreaOptions: { id: CourseAreaId; label: string }[] = [
   { id: "administracao", label: "Administração" },
   { id: "ciencias-contabeis", label: "Ciências Contábeis" },
   { id: "saude", label: "Saúde" },
+  { id: "tecnologia", label: "Tecnologia" },
 ];
 
 export type Course = {
@@ -33,7 +36,7 @@ export type Course = {
   area: CourseAreaId;
   fullDescription: string;
   syllabus: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
   disciplines: {
     name: string;
     workload?: number;
@@ -309,5 +312,6 @@ export const courses: Course[] = [
       { name: "TCC" },
     ],
   },
+  ...newCourses,
 ];
 
