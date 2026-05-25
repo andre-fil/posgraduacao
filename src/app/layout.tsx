@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Header } from "@/components/Header";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,8 @@ export default function RootLayout({
         <div className="relative min-h-screen">
           <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(1200px_circle_at_20%_0%,rgba(0,200,248,0.34),transparent_56%),radial-gradient(900px_circle_at_80%_15%,rgba(6,182,212,0.22),transparent_55%),linear-gradient(to_bottom,#031018,#05131a)]" />
           <Header />
-          <main className="min-h-full pt-24">{children}</main>
+          <main className="min-h-full pb-24 pt-24 sm:pb-28">{children}</main>
+          <WhatsAppFloat />
         </div>
       </body>
     </html>

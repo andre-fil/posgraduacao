@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 export type CourseCardCourse = {
   slug: string;
@@ -9,9 +10,9 @@ export type CourseCardCourse = {
 };
 
 export function CourseCard({ course }: { course: CourseCardCourse }) {
-  const whatsappHref = `https://wa.me/558008785129?text=${encodeURIComponent(
+  const whatsappHref = whatsappUrl(
     `Olá, tenho interesse na pós em ${course.title}`
-  )}`;
+  );
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur transition duration-300 hover:scale-105 hover:border-white/20">
@@ -55,7 +56,7 @@ export function CourseCard({ course }: { course: CourseCardCourse }) {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary/20 transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#25D366]/25 transition hover:bg-[#20bd5a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60"
             >
               Matricular
             </a>

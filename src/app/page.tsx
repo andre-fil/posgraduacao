@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CoursesSection } from "@/components/CoursesSection";
 import { courses } from "@/data/courses";
 import imgCapaEad from "@/app/img/capa-ead-site.png";
+import { whatsappUrl, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/whatsapp";
 
 export default function Home() {
   return (
@@ -39,10 +40,10 @@ export default function Home() {
 
                 <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
                   <a
-                    href="https://wa.me/558008785129"
+                    href={whatsappUrl(WHATSAPP_DEFAULT_MESSAGE)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-cyan-600/30 transition hover:brightness-105 hover:shadow-cyan-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[#25D366]/35 transition hover:bg-[#20bd5a] hover:shadow-[#25D366]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60"
                   >
                     Falar no WhatsApp
                   </a>

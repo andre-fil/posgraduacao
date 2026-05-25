@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { courses } from "@/data/courses";
+import { whatsappUrl } from "@/lib/whatsapp";
 import { CourseDisciplinesSection } from "@/components/CourseDisciplinesSection";
 
 export const dynamicParams = false;
@@ -17,9 +18,7 @@ export default function CursoPage({
 }) {
   const course = courses.find((c) => c.slug === params.slug);
   const whatsappHref = course
-    ? `https://wa.me/558008785129?text=${encodeURIComponent(
-        `Olá, tenho interesse na pós em ${course.title}`
-      )}`
+    ? whatsappUrl(`Olá, tenho interesse na pós em ${course.title}`)
     : "";
 
   if (!course) {
@@ -153,7 +152,7 @@ export default function CursoPage({
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/25 transition hover:bg-primary/90 hover:shadow-primary/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-[#25D366]/35 transition hover:bg-[#20bd5a] hover:shadow-[#25D366]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60"
             >
               Matricular via WhatsApp
             </a>
