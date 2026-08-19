@@ -8,6 +8,15 @@ import imgEducacaoInfantilNeuro from "@/app/img/Educação-Infantil-e-Neurociên
 import imgAlfabetizacaoLetramento from "@/app/img/Fundamentos-da-Alfabetização-e-Letramento-para-o-Ensino-Fundamental-femaf.png";
 import imgTecnologiasEducacao from "@/app/img/Tecnologias-para-educação-femaf.png";
 import imgGestaoPessoas from "@/app/img/Gestão-de-Pessoas-femaf.png";
+import imgMbaGestaoEmpresarial from "@/app/img/MBA-em-Gestão-Empresarial.png";
+import imgMbaFinancasControladoria from "@/app/img/MBA-em-Finanças-e-Controladoria.png";
+import imgMbaMarketingDigital from "@/app/img/MBA-em-Marketing-Digital.png";
+import imgMbaGestaoComercialVendas from "@/app/img/MBA-em-Gestão-Comercial-e-Vendas;.png";
+import imgMbaLiderancaInovacao from "@/app/img/MBA-em-Liderança-e-Inovação.png";
+import imgMbaGestaoEstrategicaNegocios from "@/app/img/MBA-em-Gestão-Estratégica-de-Negócios.png";
+import imgPosInteligenciaArtificial from "@/app/img/Pós-em-Inteligência-Artificial.png";
+import imgPosSegurancaInformacao from "@/app/img/Pós-em-Segurança-da-Informação.png";
+import imgPosAnaliseSistemasTi from "@/app/img/Pós-em-Análise-de-Sistemas-TI.png";
 
 const commonEducacaoDocencia = [
   { name: "Políticas Educacionais e Legislação", workload: 40 },
@@ -247,6 +256,7 @@ export const newCourses: Course[] = [
       "MBA voltado à gestão empresarial com governança, informação, marketing, projetos, produção, finanças e contabilidade.",
     syllabus:
       "Governança corporativa, BI, marketing estratégico, gestão ágil, produção, finanças e contabilidade societária.",
+    image: imgMbaGestaoEmpresarial,
     disciplines: [
       ...commonMbaBase,
       { name: "Dimensão Humana na Governança Corporativa", workload: 40 },
@@ -272,6 +282,7 @@ export const newCourses: Course[] = [
       "MBA com foco em finanças, contabilidade e controle na administração pública e gestão de recursos institucionais.",
     syllabus:
       "Estado e poderes, finanças públicas, contabilidade, licitações, administração pública, controle e auditoria.",
+    image: imgMbaFinancasControladoria,
     disciplines: [
       ...commonMbaBase,
       { name: "Organização do Estado e dos Poderes", workload: 45 },
@@ -297,6 +308,7 @@ export const newCourses: Course[] = [
       "Formação em estratégias digitais, mídias, e-commerce, métricas de performance e experiência do usuário.",
     syllabus:
       "Negócios e BI, marketing digital, design thinking, mídias digitais, e-commerce, branded content, UX e campanhas.",
+    image: imgMbaMarketingDigital,
     disciplines: [
       ...commonMbaBase,
       { name: "Gestão Estratégica de Negócios e BI", workload: 36 },
@@ -325,6 +337,7 @@ export const newCourses: Course[] = [
       "MBA para líderes comerciais com foco em vendas, marketing, finanças corporativas, big data e comportamento do consumidor.",
     syllabus:
       "Liderança, finanças, big data, marketing, sustentabilidade, e-commerce, varejo e neuromarketing.",
+    image: imgMbaGestaoComercialVendas,
     disciplines: [
       ...commonMbaBase,
       { name: "Coaching e Liderança", workload: 36 },
@@ -348,6 +361,7 @@ export const newCourses: Course[] = [
       "Desenvolve competências de liderança, inovação organizacional, gestão de mudanças e transformação digital.",
     syllabus:
       "Liderança contemporânea, inteligência emocional, cultura organizacional, design thinking, projetos ágeis e empreendedorismo.",
+    image: imgMbaLiderancaInovacao,
     disciplines: [
       ...commonMbaBase,
       { name: "Fundamentos da Liderança Contemporânea", workload: 30 },
@@ -386,6 +400,7 @@ export const newCourses: Course[] = [
       "Formação em planejamento estratégico, finanças, marketing, operações, inovação e tomada de decisão.",
     syllabus:
       "Gestão estratégica, planejamento, finanças, marketing, pessoas, operações, inovação e projetos.",
+    image: imgMbaGestaoEstrategicaNegocios,
     disciplines: [
       ...commonMbaBase,
       { name: "Fundamentos da Gestão Estratégica", workload: 30 },
@@ -420,6 +435,7 @@ export const newCourses: Course[] = [
       "Formação em fundamentos de IA, machine learning, deep learning, NLP, ciência de dados e aplicações inteligentes.",
     syllabus:
       "Fundamentos de IA, lógica computacional, aprendizado de máquina, redes neurais, NLP e automação.",
+    image: imgPosInteligenciaArtificial,
     disciplines: [
       ...commonTecnologiaBase,
       { name: "Fundamentos da Inteligência Artificial", workload: 30 },
@@ -447,6 +463,7 @@ export const newCourses: Course[] = [
       "Capacita profissionais em segurança da informação, governança, criptografia, redes e conformidade.",
     syllabus:
       "Fundamentos de segurança, gestão de riscos, criptografia, redes, desenvolvimento seguro e auditoria.",
+    image: imgPosSegurancaInformacao,
     disciplines: [
       ...commonTecnologiaBase,
       { name: "Fundamentos da Segurança da Informação", workload: 30 },
@@ -476,6 +493,7 @@ export const newCourses: Course[] = [
       "Formação em fundamentos de TI, arquitetura de sistemas, banco de dados, segurança e transformação digital.",
     syllabus:
       "Infraestrutura, gestão de serviços de TI, banco de dados, segurança corporativa e inovação tecnológica.",
+    image: imgPosAnaliseSistemasTi,
     disciplines: [
       ...commonTecnologiaBase,
       { name: "Fundamentos da Tecnologia da Informação", workload: 24 },
