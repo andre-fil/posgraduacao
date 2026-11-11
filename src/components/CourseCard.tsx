@@ -1,6 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { whatsappCourseMessage, whatsappUrl } from "@/lib/whatsapp";
 
 export type CourseCardCourse = {
   slug: string;
@@ -10,9 +10,7 @@ export type CourseCardCourse = {
 };
 
 export function CourseCard({ course }: { course: CourseCardCourse }) {
-  const whatsappHref = whatsappUrl(
-    `Olá, tenho interesse na pós em ${course.title}`
-  );
+  const whatsappHref = whatsappUrl(whatsappCourseMessage(course.title));
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-glass/8 shadow-lg shadow-black/20 backdrop-blur transition duration-300 hover:scale-105 hover:border-white/20">

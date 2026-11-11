@@ -27,10 +27,6 @@ export function CourseDisciplinesSection({
           <h2 className="text-sm font-semibold tracking-[0.25em] text-white/80">
             DISCIPLINAS
           </h2>
-          <p className="mt-3 text-sm text-white/70">
-            Mais de <span className="font-semibold text-white">{disciplines.length}</span>{" "}
-            disciplinas
-          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">

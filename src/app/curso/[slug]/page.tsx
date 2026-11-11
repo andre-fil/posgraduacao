@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { courses } from "@/data/courses";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { whatsappCourseMessage, whatsappUrl } from "@/lib/whatsapp";
 import { CourseDisciplinesSection } from "@/components/CourseDisciplinesSection";
 
 export const dynamicParams = false;
@@ -18,7 +18,7 @@ export default function CursoPage({
 }) {
   const course = courses.find((c) => c.slug === params.slug);
   const whatsappHref = course
-    ? whatsappUrl(`Olá, tenho interesse na pós em ${course.title}`)
+    ? whatsappUrl(whatsappCourseMessage(course.title))
     : "";
 
   if (!course) {
